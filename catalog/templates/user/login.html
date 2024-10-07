@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-3 mx-auto border rounded-2 my-2 p-2">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="form-floating my-1">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Kullanıcı Adı" name="loginName">
+                    <label for="floatingInput">Kullanıcı Adı</label>
+                </div>
+                <div class="form-floating my-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Parola" name="loginPassword">
+                    <label for="floatingPassword">Parola</label>
+                </div>
+                <div class="row my-3 justify-content-around">
+                    <div class="col-md-auto text-center">
+                        <input class="form-check-input" type="checkbox" value="" id="logged">
+                        <label class="form-check-label" for="logged">
+                            Oturumu açık tut
+                        </label>
+                    </div>
+                    <div class="col-md-auto text-center">
+                        <a class="link-opacity-100-hover" href="#">Parolanızı mı unuttunuz?</a>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 col-8 mx-auto my-1">
+                    <button type="submit" class="btn btn-primary">
+                        <a href="" class="link-light login">Giriş Yap</a>
+                    </button>
+                    <p class="fs-6 text-center mb-0">Veya</p>
+                    <a href="{% url 'register' %}" class="btn btn-success">
+                        Kayıt Ol
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-8 card my-3 ps-0">
+            <div class="row g-2 ">
+                <div class="col-md-4">
+                    <img src="{{ movieDetail.movieBanner.url }}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body pb-0">
+                        <h5 class="card-title">{{ movieDetail.name }}</h5>
+                        <p class="card-text">{{ movieDetail.description }}</p>
+                        <table class="table table-borderless table-hover mb-0">
+                            <tbody>
+                                <tr>
+                                    <th>IMDB</th>
+                                    <td>{{ movieDetail.ımdbPoints }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Süre</th>
+                                    <td>{{ movieDetail.movieDuration }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Yıl</th>
+                                    <td>{{ movieDetail.movieYear }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="h6">Eklenme Tarihi: </span>
+                        <small class="text-body-secondary"> {{ movieDetail.createdDate }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

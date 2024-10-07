@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+Anasayfa
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-5">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/Esaretin-bedeli.jpg' %}" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body pt-2 border-bottom">
+                            <h5 class="card-header bg-secondary rounded text-white text-center">Esaretin Bedeli</h5>
+                            <p class="card-text mt-1">Frank Darabont'un senaryosunu yazdığı ve yönettiği, başrollerinde
+                                Tim
+                                Robbins ve Morgan Freeman'ın yer aldığı 1994 yapımı Amerikan dram filmidir.</p>
+                        </div>
+                        <table class="table table-borderless table-hover mb-0">
+                            <tbody>
+                                <tr>
+                                    <th>IMDB</th>
+                                    <td>9.3</td>
+                                </tr>
+                                <tr>
+                                    <th>Süre</th>
+                                    <td>2 saat 22 dk</td>
+                                </tr>
+                                <tr>
+                                    <th>Yıl</th>
+                                    <td>1994</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/Kara_Şövalye.jpg' %}" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body pt-2 border-bottom">
+                            <h5 class="card-header bg-secondary rounded text-white text-center">Kara Şovalye</h5>
+                            <p class="card-text mt-1">Halk için büyük bir tehdit oluşturan Joker'in ortaya
+                                çıkması ile kaosa dönen Gotham Sokakları'nın yeniden kurtarıcılığını üstlenen Batman'in
+                                hikayesi.</p>
+                        </div>
+                        <table class="table table-borderless table-hover mb-0">
+                            <tbody>
+                                <tr>
+                                    <th>IMDB</th>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <th>Süre</th>
+                                    <td>2 saat 32 dk</td>
+                                </tr>
+                                <tr>
+                                    <th>Yıl</th>
+                                    <td>2008</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/matrix.jpg' %}" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body pt-2 border-bottom">
+                            <h5 class="card-header bg-secondary rounded text-white text-center">Matrix</h5>
+                            <p class="card-text mt-1">Bilgisayar programcısı Thomas Anderson, hacker takma adı "Neo"
+                                olarak gerçeği ortaya çıkardığında, Matrix'ten kurtulan insanlarla birlikte
+                                makinelere karşı isyana katılır.</p>
+                        </div>
+                        <table class="table table-borderless table-hover mb-0">
+                            <tbody>
+                                <tr>
+                                    <th>IMDB</th>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <th>Süre</th>
+                                    <td>2 saat 16 dk</td>
+                                </tr>
+                                <tr>
+                                    <th>Yıl</th>
+                                    <td>2008</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

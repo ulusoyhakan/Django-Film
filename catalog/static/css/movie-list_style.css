@@ -1,0 +1,67 @@
+/* film listesi efekti ↓ */
+.card-movie-list {
+    /* transition: all 0.3s; */
+    transition: all 0.3s;
+}
+
+.card-movie-list:hover {
+    transform: scale(1.07);
+}
+
+/* film listesi efekti ↑ */
+
+
+
+/* film afişleri ↓ */
+.img-fixed-size {
+    width: 100%;
+    /* Poster genişliği kartın tamamını kapsayacak */
+    height: 350px;
+    /* Sabit bir yükseklik belirleyebilirsin */
+    object-fit: cover;
+    /* Poster oranını koruyarak taşıp kesilmesini sağlar */
+    max-height: auto;
+}
+
+@media (max-width: 768px) {
+    .img-fixed-size {
+        height: auto;
+        /* Yüksekliği otomatik ayarlayarak orantılı şekilde küçülmesini sağlar */
+        max-height: auto;
+        /* Çok büyük resimleri sınırlamak için maksimum yükseklik */
+    }
+}
+
+/* film afişleri ↑ */
+
+/* navbar hover ↓ */
+
+
+.nav-item {
+    position: relative; /* nav-item'ı kapsayıcı yapıyoruz */
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    height: 1.5px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+
+.login {
+    text-decoration: none !important;
+}

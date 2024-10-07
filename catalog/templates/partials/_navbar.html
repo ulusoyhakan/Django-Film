@@ -1,0 +1,69 @@
+{% load static %}
+
+{% block css %}
+{% endblock css %}
+
+<header>
+    <nav class="navbar navbar-expand-md pb-0 border-bottom p-0 bg-body-tertiary">
+        <div class="container-fluid ">
+            <a href="#" class="navbar-brand">
+                <img src="{% static 'img/logo.svg' %}" alt="Logo" height="60px" class="ms-3">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item my-auto">
+                        <a class="nav-link  {% if request.path == '/' %}active{% endif %}" aria-current="page"
+                            href="{% url 'index' %}">Anasayfa</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="nav-link {% if request.path == '/about'%}active{% endif %} "
+                            href="{% url 'about' %}">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="nav-link {% if request.path == '/movies/'%}active{% endif %} "
+                            href="{% url 'movies' %}">Filmler</a>
+                    </li>
+                    <li class="nav-item my-auto">
+                        <a class="nav-link {% if request.path == '/content'%}active{% endif %}"
+                            href="{% url 'content' %}">İletişim</a>
+                    </li>
+                </ul>
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav navbar-nav-login">
+                    <li class="nav-item me-1 my-auto">
+                        ({{ user.username }})
+                    </li>
+                    <li class="nav-item me-1">
+                        <form action="{% url 'logout' %}" method="post">
+                            {%csrf_token%}
+                            <button href="{% url 'logout' %}" class="btn btn-outline-success "
+                                style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">
+                                Çıkış Yap
+                            </button>
+                        </form>
+                    </li>
+
+                </ul>
+                {% else %}
+                <ul class="navbar-nav navbar-nav-login">
+                    <li class="nav-item me-1">
+                        <a href="{% url 'login' %}" class="btn btn-outline-dark fw-bold"
+                            style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">Giriş
+                            Yap</a>
+                    </li>
+                    <li class=" nav-item">
+                        <a href="{% url 'register' %}" class="btn btn-outline-dark fw-bold"
+                            style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">Kayıt
+                            Ol</a>
+                    </li>
+                </ul>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+</header>
